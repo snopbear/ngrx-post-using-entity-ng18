@@ -1,0 +1,17 @@
+1. ng add @ngrx/store@latest
+2. ng add @ngrx/effects@latest
+3. ng add @ngrx/router-store@latest
+4. ng add @ngrx/entity@
+
+
+---------------------------------------
+
+1. Create interface for IPost in models
+2. Create interface IPostsState in the state 
+3. Create interface initialState based on IPostsState interface 
+
+
+4. Create Reducer 
+5. Create AppState Import IPostsState
+6. Create Selector based on IPostsState interface : posts which is in the reducer
+7. Use the select in component 
