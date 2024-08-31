@@ -1,28 +1,74 @@
- table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+ .container {
+            display: flex; /* Enable flexbox */
+            height: 100vh; /* Full viewport height */
         }
-        table, th, td {
-            border: 1px solid #ddd;
+
+        .pane-65 {
+            flex: 0 0 60%; /* Fixed width at 65% */
+            padding: 5px;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
+
+        .pane-35 {
+            flex: 0 0 35%; /* Fixed width at 35% */
+            padding: 5px;
+          
         }
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Lighter background for odd rows */
+}
+tr:nth-child(even) {
+  background-color: #e0e0e0; /* Darker background for even rows */
+}
+tr:hover {
+  background-color: #d1d1d1;
+}
+caption {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.btn {
+            display: inline-block;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 12px 24px; /* Padding inside the button */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* Remove underline from text */
+            font-size: 16px; /* Font size */
+            border-radius: 12px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition */
+            cursor: pointer; /* Pointer/hand icon on hover */
         }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+
+        .btn:hover {
+            background-color: #45a049; /* Darker green on hover */
         }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        caption {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-align: left;
+
+        .btn:active {
+            background-color: #3e8e41; /* Even darker green when clicked */
+            // box-shadow: 0 5px #666; /* Shadow effect */
+            transform: translateY(4px); /* Move button down slightly */
         }

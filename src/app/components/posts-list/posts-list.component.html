@@ -1,20 +1,39 @@
+<div class="container">
+  <div class="pane-65">
+    <div><a href="" class="btn" [routerLink]="['/posts/add']">Add Post</a></div>
 
-  <table>
-    <caption>Sample Data Table</caption>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of posts$ | async">
-        <td>{{item.id}}</td>
-        <td>{{item.title}}</td>
-        <td>{{item.description}}</td>
 
-      </tr>
+    <div *ngIf="posts$ | async as posts">
 
-    </tbody>
-  </table>
+      <table>
+        <caption>Sample Data Table</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Description</th>
+                      <th>Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.description}}</td><td>
+              <a href="" class="btn btn-primary" [routerLink]="['../edit', post.id]">Update </a>&nbsp;
+              <button class="btn btn-danger" (click)="onDeletePost(post.id)">
+                Delete</button>&nbsp;
+              <a href="" class="btn btn-info" [routerLink]="['details', post.id]">Details
+              </a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pane-35">
+    <app-add-post />
+  </div>
+</div>
