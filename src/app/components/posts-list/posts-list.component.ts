@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../app-state/app.state';
 import { Observable } from 'rxjs';
 import { IPost } from '../../models/posts.interface';
-import { getPosts } from '../../state/posts.selector';
+import { getCount, getPosts } from '../../state/posts.selector';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AddPostComponent } from '../add-post/add-post.component';
@@ -18,10 +18,14 @@ import { deletePost, loadPosts } from '../../state/posts.actions';
 })
 export class PostsListComponent implements OnInit {
   posts$!: Observable<IPost[]>;
+  count!: Observable<number>;
+
   constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
     this.posts$ = this.store.select(getPosts);
+        this.count = this.store.select(getCount);
+
     this.store.dispatch(loadPosts()); // Load posts on component initialization.
   }
 
