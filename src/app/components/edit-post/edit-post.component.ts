@@ -65,7 +65,7 @@ export class EditPostComponent implements OnInit {
     };
     //dispatch the action
     this.store.dispatch(updatePost({ post }));
-    this.router.navigate(['list']);
+    this.router.navigate(['post/list']);
   }
 
   ngOnDestroy() {
