@@ -53,7 +53,7 @@ export class AddPostComponent implements OnInit {
     return ''; // or return null;
   }
   onAddPost() {
-    debugger;
+    
     if (!this.postForm.valid) {
       return;
     }

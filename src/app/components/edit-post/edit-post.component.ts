@@ -27,34 +27,18 @@ export class EditPostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe((params:any )=> {
-      
-      const id= params.get('id');
-      this.store.select(getPostById,{id}).subscribe(post=>{
-        console.log(post);
-        this.post=post;
-        this.createForm();
-        if(post){
-              this.postForm.patchValue({
-                title: post.title,
-                description: post.description,
-              });
-        }
-
-      });
+    this.createForm();
+    this.store.select(getPostById).subscribe((post) => {
+      debugger
+      if (post) {
+        this.post = post;
+        this.postForm.patchValue({ 
+          title: post.title,
+          description: post.description,
+        });
+      }
     });
-    
-    // this.store.select(getPostById).subscribe((post) => {
-    //   if (post) {
-    //     this.post = post;
-    //     this.postForm.patchValue({
-    //       title: post.title,
-    //       description: post.description,
-    //     });
-    //   }
-    // });
   }
-
   createForm() {
     this.postForm = new FormGroup({
       title: new FormControl(null, [

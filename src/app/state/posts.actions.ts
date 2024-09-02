@@ -25,8 +25,9 @@ export const updatePost = createAction(
 
 export const updatePostSuccess = createAction(
   UPDATE_POST_SUCCESS,
-  props<{ post: Update<IPost> }>()
+  props<{ post: IPost }>()
 );
+
 
 export const deletePost = createAction(
   DELETE_POST_ACTION,

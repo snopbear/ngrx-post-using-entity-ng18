@@ -1,6 +1,5 @@
 <div class="container">
   <div class="pane-65">
-    <div><a href="" class="btn" [routerLink]="['/posts/add']">Add Post</a></div>
 
 
     <div *ngIf="posts$ | async as posts">
@@ -21,10 +20,11 @@
             <td>{{post.id}}</td>
             <td>{{post.title}}</td>
             <td>{{post.description}}</td><td>
-              <a href="" class="btn btn-primary" [routerLink]="['../edit', post.id]">Update </a>&nbsp;
+              <a href="" class="btn btn-primary" [routerLink]="['./../../post/edit', post.id]">Update </a>&nbsp;
               <button class="btn btn-danger" (click)="onDeletePost(post.id)">
-                Delete</button>&nbsp;
-              <a href="" class="btn btn-info" [routerLink]="['details', post.id]">Details
+                Delete</button>
+                &nbsp;
+              <a href="" class="btn btn-info" [routerLink]="['./../../post/single', post.id]">Details
               </a>
             </td>
           </tr>

@@ -1,0 +1,31 @@
+<nav class="custom-navbar">
+  <div class="custom-container-fluid">
+    <!-- <a class="custom-navbar-brand" href="#">Navbar</a> -->
+    <!-- <button class="custom-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="custom-navbar-toggler-icon"></span>
+    </button> -->
+    <div class="custom-navbar-collapse collapse" id="navbarNav">
+      <ul class="custom-navbar-nav">
+        <li class="custom-nav-item">
+          <a class="custom-nav-link active" aria-current="page" href="#" [routerLink]="['/']">Home</a>
+        </li>
+        <!-- <li class="custom-nav-item">
+          <a class="custom-nav-link" href="#" [routerLink]="['/counter']">Counter</a>
+        </li> -->
+        <li class="custom-nav-item">
+          <a class="custom-nav-link" href="#" [routerLink]="['/list']">Posts</a>
+        </li>
+        <li class="custom-nav-item" *ngIf="!(isAuthenticated | async)">
+          <a class="custom-nav-link" href="#" [routerLink]="['auth/login']">Login</a>
+        </li>
+        <li class="custom-nav-item" *ngIf="!(isAuthenticated | async)">
+          <a class="custom-nav-link" href="#" [routerLink]="['auth/signup']">Signup</a>
+        </li>
+        <li class="custom-nav-item" *ngIf="isAuthenticated | async">
+          <a class="custom-nav-link" (click)="onLogout($event)">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

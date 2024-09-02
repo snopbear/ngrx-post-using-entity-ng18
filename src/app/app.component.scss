@@ -1,0 +1,40 @@
+.custom-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+  color: #721c24; /* Danger text color */
+  background-color: #f8d7da; /* Danger background color */
+  border-color: #f5c6cb; /* Danger border color */
+}
+
+.custom-alert-danger {
+  color: #721c24; /* Danger text color */
+  background-color: #f8d7da; /* Danger background color */
+  border-color: #f5c6cb; /* Danger border color */
+}
+
+
+.custom-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px; /* You can adjust this based on your design */
+}
+
+.custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.custom-col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}

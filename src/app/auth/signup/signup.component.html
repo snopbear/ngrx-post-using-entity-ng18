@@ -1,0 +1,39 @@
+<div class="custom-container">
+  <div class="custom-row">
+    <div class="custom-col-md-6">
+      <h3>SignUp</h3>
+      <hr class="custom-hr" />
+      <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
+        <div class="custom-form-group">
+          <label class="custom-form-label">Email</label>
+          <input type="email" class="custom-form-control" formControlName="email" />
+          <div *ngIf="
+              signUpForm.get('email')?.touched && !signUpForm.get('email')?.valid
+            " class="custom-validation-error">
+            <div *ngIf="signUpForm.get('email')?.errors?.['required']">
+              Email is required
+            </div>
+            <div *ngIf="signUpForm.get('email')?.errors?.['email']">
+              Invalid Email
+            </div>
+          </div>
+        </div>
+        <div class="custom-form-group">
+          <label class="custom-form-label">Password</label>
+          <input type="password" class="custom-form-control" formControlName="password" />
+          <div *ngIf="
+              signUpForm.get('password')?.touched &&
+              !signUpForm.get('password')?.valid
+            " class="custom-validation-error">
+            <div>Password is required</div>
+          </div>
+        </div>
+        <div class="custom-form-group">
+          <button type="submit" class="custom-btn" [disabled]="!signUpForm.valid">
+            SignUp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

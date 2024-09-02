@@ -7,7 +7,7 @@ import { getPosts } from '../../state/posts.selector';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AddPostComponent } from '../add-post/add-post.component';
-import { deletePost } from '../../state/posts.actions';
+import { deletePost, loadPosts } from '../../state/posts.actions';
 
 @Component({
   selector: 'app-posts-list',
@@ -22,6 +22,7 @@ export class PostsListComponent implements OnInit {
 
   ngOnInit() {
     this.posts$ = this.store.select(getPosts);
+    this.store.dispatch(loadPosts()); // Load posts on component initialization.
   }
 
   onDeletePost(id: string) {

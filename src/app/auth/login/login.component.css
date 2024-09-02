@@ -1,0 +1,70 @@
+/* General form styling */
+.container{
+    width:20rem;
+    text-align:center;
+    margin: auto;
+}
+
+form {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h3 {
+  text-align: center;
+  color: #343a40; /* Dark grey text */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  font-weight: 500;
+  color: #495057; /* Slightly lighter grey */
+}
+
+/* Input styling */
+input.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da; /* Light border */
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Input focus state */
+input.form-control:focus {
+  border-color: #007bff; /* Bootstrap primary color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Light blue shadow */
+}
+
+/* Error message styling */
+div[ngIf] {
+  color: #dc3545; /* Bootstrap danger color */
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Submit button styling */
+button.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #007bff; /* Bootstrap primary color */
+  border-color: #007bff;
+  border-radius: 5px;
+}
+
+/* Submit button hover state */
+button.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue */
+  border-color: #0056b3;
+}
+
+/* Form container styling */
+.col-md-6.offset-md-3 {
+  margin-top: 50px;
+}
